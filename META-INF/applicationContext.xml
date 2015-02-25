@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
+
+	<!-- bean definitions go here -->
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>config.properties</value>
+				<value>classifierConfig.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- feature related services -->
+
+	<bean id="punkt.service" class="com.cheo.services.feature.PunktService"
+		scope="singleton" lazy-init="true" init-method="init">
+	</bean>
+
+	<bean id="elongatedWord.service" class="com.cheo.services.feature.ElongatedWordService"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="slang.service" class="com.cheo.services.feature.SlangService"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="wordnet.service" class="com.cheo.services.WordNetService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="tagReader" ref="snlp.wordnet.tagReader" />
+	</bean>
+
+	<bean id="sentiwordnet.service" class="com.cheo.services.feature.SentiWordNetService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="resource" value="classpath:SentiWordNet.txt" />
+		<property name="tagReader" ref="snlp.swn.tagReader" />
+	</bean>
+
+	<bean id="generalIquirer.service" class="com.cheo.services.feature.GeneralInquirerService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="pos_resource" value="classpath:positive_gi.txt" />
+		<property name="neg_resource" value="classpath:negative_gi.txt" />
+	</bean>
+
+	<bean id="polarityLexicon.service" class="com.cheo.services.feature.PolarityLexiconService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="resource" value="classpath:subjclues.tff" />
+		<property name="tagReader" ref="snlp.pl.tagReader" />
+	</bean>
+
+	<bean id="dsl.service" class="com.cheo.services.feature.DomainLexiconService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="resource" value="classpath:domain_lexicon_fivegram_result.txt" />
+	</bean>
+
+	<bean id="emoticons.service" class="com.cheo.services.feature.EmoticonService"
+		scope="singleton" lazy-init="true" init-method="init">
+	</bean>
+
+	<bean id="depechemode.service" class="com.cheo.services.feature.DepechemodeService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="resource" value="classpath:DepecheMood_tfidf.txt" />
+		<property name="tagReader" ref="snlp.depmode.tagReader" />
+	</bean>
+
+	<bean id="nrcLexicon.service" class="com.cheo.services.feature.NRCLexiconService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="resource" value="classpath:NRC-emotion-lexicon.txt" />
+	</bean>
+
+	<!-- Other services -->
+
+	<bean id="analyzer.service" class="com.cheo.services.AnalyzerService"
+		scope="singleton" lazy-init="true">
+		<property name="serviceRegistery" ref="service.registery" />
+		<property name="serviceList">
+			<list>
+				<ref bean="punkt.service" />
+				<ref bean="emoticons.service" />
+				<ref bean="elongatedWord.service" />
+				<ref bean="dsl.service" />
+				<ref bean="slang.service" />
+				<ref bean="generalIquirer.service" />
+				<ref bean="sentiwordnet.service" />
+				<ref bean="depechemode.service" />
+				<ref bean="polarityLexicon.service" />
+				<ref bean="nrcLexicon.service" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="stopwords.service" class="com.cheo.services.StopWordService"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="resource" value="classpath:stop_words.txt" />
+	</bean>
+
+	<bean id="app.service" class="com.cheo.services.AppService" scope="singleton"
+		lazy-init="true">
+		<property name="serviceRegistery" ref="service.registery" />
+		<property name="repository" ref="comment.repository" />
+		<property name="wekaClassifier" ref="weka.classifier" />
+		<property name="arffLocationBuilder" ref="arff.location.builder" />
+		<property name="bnsService" ref="service.featureSelection.bns" />
+		<property name="spellCheckingService" ref="spellCheker.service" />
+		<property name="statistics" ref="excel.statistics.service" />
+		<property name="discourseParser" ref="discourseParser.service" />
+		<property name="featureSelectionResultLocBuilder" ref="featureSelection.location.builder" />
+	</bean>
+
+	<!-- Arff file related -->
+	
+	<bean id="arff.config.reader" class="com.cheo.services.arff.ArffConfigReader"
+		scope="singleton" lazy-init="true">
+		<property name="resource" value="classpath:arff-config.xml" />
+	</bean>
+
+	<bean id="arff.service.edu" class="com.cheo.services.arff.ArffServiceEuds"
+		scope="singleton" lazy-init="true">
+		<property name="alnalyzer" ref="analyzer.service" />
+		<property name="arffHelper" ref="arff.helper.edu" />
+	</bean>
+	
+	<bean id="arff.service.comment" class="com.cheo.services.arff.ArffServiceComments"
+		scope="singleton" lazy-init="true">
+		<property name="alnalyzer" ref="analyzer.service" />
+		<property name="arffHelper" ref="arff.helper.comment" />
+		<property name="predictionHelper" ref="class.prediction.lastEdu" />
+	</bean>
+
+	<bean id="service.registery" class="com.cheo.services.ServiceRegistery"
+		scope="singleton" lazy-init="true">
+		<property name="configReader" ref="arff.config.reader" />
+		<property name="arffEdu" ref="arff.service.edu" />
+		<property name="arffComment" ref="arff.service.comment" />
+		<property name="preprocessorEDUs" ref="preprocessor.service.edus" />
+		<property name="preprocessorComments" ref="preprocessor.service.comments" />
+	</bean>
+	
+	<bean id="arff.helper.abstract" class="com.cheo.services.arff.AbstractArffHelpert"
+		scope="prototype" lazy-init="true" abstract="true">
+		<property name="reader" ref="arff.config.reader" />
+	</bean>
+	
+	<bean id="arff.helper.comment" class="com.cheo.services.arff.ArffHelperComment"
+		scope="prototype" lazy-init="true" parent="arff.helper.abstract" >
+	</bean>
+	
+	<bean id="arff.helper.edu" class="com.cheo.services.arff.ArffHelperEdu"
+		scope="prototype" lazy-init="true" parent="arff.helper.abstract" >
+	</bean>
+	
+	<!-- Hilda Tree -->
+	
+	<bean id="hilda.tree.builder" class="com.cheo.services.hildaTree.stats.TreeBuilder"
+		scope="prototype" lazy-init="true">
+		<property name="initializers">
+			<list>
+				<ref bean="hilda.tree.sheetID.init" />
+				<ref bean="hilda.tree.commentID.init" />
+				<ref bean="hilda.tree.eduID.init" />
+				<!-- <ref bean="hilda.tree.prediction.init" /> -->
+				<ref bean="hilda.tree.actualEduClass.init" />
+			</list>
+		</property>
+		<property name="repository" ref="comment.repository" />
+	</bean>
+	
+	<bean id="hilda.tree.eduID.init" class="com.cheo.services.hildaTree.stats.EduIDInitializer"
+		scope="prototype" lazy-init="true">
+		<property name="repository" ref="comment.repository" />
+	</bean>
+	
+	<bean id="hilda.tree.commentID.init" class="com.cheo.services.hildaTree.stats.CommentIDInitializer"
+		scope="prototype" lazy-init="true">
+	</bean>
+	
+	<bean id="hilda.tree.sheetID.init" class="com.cheo.services.hildaTree.stats.SheetIDInitializer"
+		scope="prototype" lazy-init="true">
+	</bean>
+	
+	<bean id="hilda.tree.prediction.init" class="com.cheo.services.hildaTree.stats.PredictionInitializer"
+		scope="prototype" lazy-init="true">
+		<property name="predictionHelper" ref="class.prediction.lastEdu" />
+	</bean>
+	
+	<bean id="hilda.tree.actualEduClass.init" class="com.cheo.services.hildaTree.stats.EduActualClassInitializer"
+		scope="prototype" lazy-init="true">
+		<property name="repository" ref="comment.repository" />
+	</bean>
+	
+	<!-- Base related -->
+
+	<bean id="comment.repository" class="com.cheo.model.repositories.CommentRepository"
+		scope="singleton" lazy-init="true">
+		<property name="arff" ref="arff.helper.comment" />
+		<property name="excelService" ref="excel.service" />
+	</bean>
+	
+	<bean id="filter.comments" class="com.cheo.model.repositories.CommentFilter"
+		scope="singleton" lazy-init="true">
+		<property name="predictonFileName" value="arff_relevantIrrelevant_smo_prediction_edus_efs.txt" />
+	</bean>
+	
+	<bean id="arff.location.builder" class="com.cheo.base.ArffLocationBuilder"
+		scope="singleton" lazy-init="true">
+		<property name="arffFolderPath" value="#{'${com.cheo.workspace.location}' + '/config/arff'}" />
+		<property name="arffConfigReader" ref="arff.config.reader" />
+	</bean>
+	
+	<bean id="classification.location.builder" class="com.cheo.base.ClassificationLocationBuilder"
+		scope="singleton" lazy-init="true">
+		<property name="modelFolderPath" value="#{'${com.cheo.workspace.location}' + '/config/model'}" />
+		<property name="evaluationFolderPath" value="#{'${com.cheo.workspace.location}' + '/config/evaluation'}" />
+		<property name="arffFolderPath" value="#{'${com.cheo.workspace.location}' + '/config/arff'}" />
+		<property name="classifierConfigReader" ref="classifier.config.reader" />
+	</bean>
+
+	<bean id="featureSelection.location.builder" class="com.cheo.base.FeatureSelectionResultLocBuilder"
+		scope="singleton" lazy-init="true">
+		<property name="baseFolder" value="${base.featureSelection.folder}" />
+		<property name="configReader" ref="arff.config.reader" />
+	</bean>
+
+	<!-- Classifier services -->
+
+	<bean id="classifier.config.reader" class="com.cheo.weka.services.ClassifierConfigReader"
+		scope="singleton" lazy-init="true">
+		<property name="resource" value="classpath:classifier-config.xml" />
+	</bean>
+	
+	<bean id="weka.classifier" class="com.cheo.weka.services.WekaClassifierService"
+		scope="singleton" lazy-init="true">
+		<property name="locationBuilder" ref="classification.location.builder" />
+		<property name="configReader" ref="classifier.config.reader" />
+	</bean>
+			
+	<bean id="classifier.for.lastEdu.sentiment" class="com.cheo.weka.services.EduClassifierForLastEduSentimentExtraction"
+		scope="singleton" lazy-init="true">
+		<property name="locationBuilder" ref="classification.location.builder" />
+		<property name="configReader" ref="classifier.config.reader" />
+	</bean>
+	
+	<bean id="class.prediction.lastEdu" class="com.cheo.weka.classifiers.prediction.PredictionHelper"
+		scope="prototype" lazy-init="true"  >
+		<property name="arffHelper" ref="arff.helper.comment" />
+		<property name="predictonFileName" value="arff_relevantIrrelevant_smo_prediction_edus_efs.txt" />
+	</bean>
+	
+	<bean id="stat.test.significance" class="com.cheo.weka.classifiers.prediction.TestOfSignificance"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<!-- Configuration Readers -->
+
+	<bean id="snlp.swn.tagReader" class="com.cheo.tagConv.SNLPSWNTagConv"
+		scope="singleton" lazy-init="true">
+		<property name="resource"
+			value="file:resources/tagConv/SNLP-SWN-POSTagConv.xml" />
+	</bean>
+
+	<bean id="snlp.wordnet.tagReader" class="com.cheo.tagConv.SNLPWordnetTagConv"
+		scope="singleton" lazy-init="true">
+		<property name="resource"
+			value="file:resources/tagConv/SNLP-Wordnet-POSTagConv.xml" />
+	</bean>
+
+	<bean id="snlp.pl.tagReader" class="com.cheo.tagConv.SNLPPLTagConv"
+		scope="singleton" lazy-init="true">
+		<property name="resource"
+			value="file:resources/tagConv/SNLP-PL-POSTagConv.xml" />
+	</bean>
+
+	<bean id="snlp.depmode.tagReader" class="com.cheo.tagConv.SNLPDepmodeTagConv"
+		scope="singleton" lazy-init="true">
+		<property name="resource"
+			value="file:resources/tagConv/SNLP-Depmode-POSTagConv.xml" />
+	</bean>
+
+
+	<!-- feature selection -->
+
+	<bean id="service.featureSelection.bns" class="com.cheo.services.featureSelection.BiNormalSeperation"
+		scope="singleton" lazy-init="true" init-method="init">
+		<property name="configReader" ref="arff.config.reader" />
+	</bean>
+
+	<bean id="spellCheker.service" class="com.cheo.services.SpellChekerService"
+		scope="singleton" lazy-init="true">
+		<property name="resource" value="classpath:medicalTerms.xml" />
+	</bean>
+
+	<bean id="discourseParser.service" class="com.cheo.services.DiscourseParserService"
+		scope="singleton" lazy-init="true">
+		<property name="excelService" ref="excel.service" />
+	</bean>
+	
+	<!-- Argumentation  -->
+
+	<bean id="arumentation.service" class="com.cheo.services.argumentation.ArgumentationExtractionService"
+		scope="singleton" lazy-init="true">
+		<property name="excelService" ref="excel.service" />
+		<property name="preprocessor" ref="preprocessor.service.edus" />
+	</bean>
+	
+	<bean id="tfidf.service" class="com.cheo.services.argumentation.TFIDFService"
+		scope="singleton" lazy-init="true">
+		<property name="arffPath" value="#{'${com.cheo.workspace.location}' + '/config/argumentation/arff_relevantIrrelevant_efs_edus.arff'}" />
+	</bean>
+
+	<!-- Excel Services -->
+
+	<bean id="excel.config" class="com.cheo.services.excel.ExcelConfig"
+		scope="singleton" lazy-init="true">
+		<property name="resource" value="classpath:columnMapping.xml" />
+	</bean>
+
+	<bean id="excel.service" class="com.cheo.services.excel.ExcelServiceImpl"
+		scope="singleton" lazy-init="true">
+		<property name="spellChecker" ref="spellCheker.service" />
+		<property name="config" ref="excel.config" />
+		<property name="first_annotator_comments_1" value="classpath:GenomeSeqComments_1_v2_corrected_AA.xls" />
+		<property name="first_annotator_comments_2" value="classpath:GenomeSeqComments_2_v2_corrected_AA.xls" />
+		<property name="first_annotator_comments_3" value="classpath:GenomeSeqComments_mothering_v2_corrected_AA.xls" />
+		<property name="second_annotator_comments_1" value="classpath:GenomeSeqComments_1_v2_corrected_NA.xls" />
+		<property name="second_annotator_comments_2" value="classpath:GenomeSeqComments_2_v2_corrected_NA.xls" />
+		<property name="second_annotator_comments_3" value="classpath:GenomeSeqComments_mothering_v2_corrected_NA.xls" />
+		<property name="first_annotator_edus_1" value="classpath:GenomeSeqComments_1_v2_corrected_AA_eduLevel.xls" />
+		<property name="first_annotator_edus_2" value="classpath:GenomeSeqComments_2_v2_corrected_AA_eduLevel.xls" />
+		<property name="first_annotator_edus_3" value="classpath:GenomeSeqComments_mothering_v2_corrected_AA_eduLevel.xls" />
+	
+	</bean>
+
+	<bean id="excel.statistics.service" class="com.cheo.services.excel.Statistics"
+		scope="singleton" lazy-init="true">
+		<property name="excelService" ref="excel.service" />
+	</bean>
+	
+	<bean id="hilda.statistics.service" class="com.cheo.services.hildaTree.stats.HildaStatistics"
+		scope="singleton" lazy-init="true">
+		<property name="excelStats" ref="excel.statistics.service" />
+		<property name="treeBuilder" ref="hilda.tree.builder" />
+	</bean>
+	
+	<!-- Preprocessing strategy -->
+
+	<bean id="lowercase.strategy" class="com.cheo.preprocessing.LowerCaseStrategy"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="apost.strategy" class="com.cheo.preprocessing.ApostropheStrategy"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="elong.strategy" class="com.cheo.preprocessing.ElongatedWordStrategy"
+		scope="singleton" lazy-init="true">
+		<property name="service" ref="elongatedWord.service" />
+	</bean>
+
+	<bean id="posTag.strategy" class="com.cheo.preprocessing.POSTagStrategy"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="remove.strategy" class="com.cheo.preprocessing.RemoveStrategy"
+		scope="singleton" lazy-init="true">
+		<property name="stopWordsService" ref="stopwords.service" />
+	</bean>
+
+	<bean id="spellCheck.strategy" class="com.cheo.preprocessing.SpellCheckingStrategy"
+		scope="singleton" lazy-init="true">
+		<property name="spellChecker" ref="spellCheker.service" />
+	</bean>
+
+	<bean id="splitToken.strategy" class="com.cheo.preprocessing.SplitTokenStrategy"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="preprocessor.service.edus" class="com.cheo.services.PreprocessorServiceEDUs"
+		scope="singleton" lazy-init="true">
+	</bean>
+
+	<bean id="preprocessor.service.comments" class="com.cheo.services.PreprocessorServiceComments"
+		scope="singleton" lazy-init="true">
+	</bean>
+	
+</beans>

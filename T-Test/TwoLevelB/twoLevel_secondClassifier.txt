@@ -1,0 +1,345 @@
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 2:negative       0.333,*0.667,0 
+     3 2:negative 1:positive   +   *0.667,0.333,0 
+     4 2:negative 1:positive   +   *0.667,0,0.333 
+     5 2:negative 2:negative       0.333,*0.667,0 
+     6 2:negative 1:positive   +   *0.667,0.333,0 
+     7 2:negative 2:negative       0.333,*0.667,0 
+     8 1:positive 1:positive       *0.667,0.333,0 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0,0.333 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0.333,0 
+    13 1:positive 1:positive       *0.667,0.333,0 
+    14 1:positive 1:positive       *0.667,0.333,0 
+    15 1:positive 1:positive       *0.667,0.333,0 
+    16 1:positive 1:positive       *0.667,0,0.333 
+    17 1:positive 1:positive       *0.667,0,0.333 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0,0.333 
+    20 1:positive 1:positive       *0.667,0,0.333 
+    21 1:positive      3:mix   +   0.333,0,*0.667 
+    22 1:positive 1:positive       *0.667,0.333,0 
+    23 1:positive 2:negative   +   0,*0.667,0.333 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 2:negative   +   0.333,*0.667,0 
+    26 1:positive 1:positive       *0.667,0,0.333 
+    27 1:positive 1:positive       *0.667,0,0.333 
+    28 1:positive 1:positive       *0.667,0,0.333 
+    29      3:mix      3:mix       0,0.333,*0.667 
+    30      3:mix 2:negative   +   0.333,*0.667,0 
+    31      3:mix 1:positive   +   *0.667,0,0.333 
+    32      3:mix 1:positive   +   *0.667,0.333,0 
+    33      3:mix 2:negative   +   0.333,*0.667,0 
+    34      3:mix 1:positive   +   *0.667,0,0.333 
+    35      3:mix      3:mix       0.333,0,*0.667 
+     1 2:negative      3:mix   +   0.333,0,*0.667 
+     2 2:negative 2:negative       0.333,*0.667,0 
+     3 2:negative 2:negative       0.333,*0.667,0 
+     4 2:negative 2:negative       0.333,*0.667,0 
+     5 2:negative 1:positive   +   *0.667,0.333,0 
+     6 2:negative 1:positive   +   *0.667,0,0.333 
+     7 2:negative 2:negative       0.333,*0.667,0 
+     8 1:positive 1:positive       *0.667,0,0.333 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0.333,0 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0,0.333 
+    13 1:positive 1:positive       *0.667,0,0.333 
+    14 1:positive 1:positive       *0.667,0,0.333 
+    15 1:positive 2:negative   +   0,*0.667,0.333 
+    16 1:positive 1:positive       *0.667,0.333,0 
+    17 1:positive 1:positive       *0.667,0,0.333 
+    18 1:positive 1:positive       *0.667,0.333,0 
+    19 1:positive 1:positive       *0.667,0.333,0 
+    20 1:positive 1:positive       *0.667,0.333,0 
+    21 1:positive 1:positive       *0.667,0,0.333 
+    22 1:positive 1:positive       *0.667,0,0.333 
+    23 1:positive 1:positive       *0.667,0,0.333 
+    24 1:positive 1:positive       *0.667,0,0.333 
+    25 1:positive 2:negative   +   0.333,*0.667,0 
+    26 1:positive 1:positive       *0.667,0,0.333 
+    27 1:positive 1:positive       *0.667,0,0.333 
+    28 1:positive 1:positive       *0.667,0,0.333 
+    29      3:mix 1:positive   +   *0.667,0.333,0 
+    30      3:mix      3:mix       0.333,0,*0.667 
+    31      3:mix      3:mix       0.333,0,*0.667 
+    32      3:mix 1:positive   +   *0.667,0.333,0 
+    33      3:mix 2:negative   +   0.333,*0.667,0 
+    34      3:mix 2:negative   +   0.333,*0.667,0 
+    35      3:mix 1:positive   +   *0.667,0,0.333 
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 1:positive   +   *0.667,0.333,0 
+     3 2:negative 1:positive   +   *0.667,0.333,0 
+     4 2:negative 1:positive   +   *0.667,0,0.333 
+     5 2:negative 1:positive   +   *0.667,0.333,0 
+     6 2:negative 2:negative       0.333,*0.667,0 
+     7 2:negative 2:negative       0.333,*0.667,0 
+     8 1:positive 2:negative   +   0.333,*0.667,0 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0.333,0 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0,0.333 
+    13 1:positive 1:positive       *0.667,0.333,0 
+    14 1:positive 1:positive       *0.667,0.333,0 
+    15 1:positive      3:mix   +   0.333,0,*0.667 
+    16 1:positive      3:mix   +   0.333,0,*0.667 
+    17 1:positive 2:negative   +   0.333,*0.667,0 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0,0.333 
+    20 1:positive 1:positive       *0.667,0,0.333 
+    21 1:positive 1:positive       *0.667,0,0.333 
+    22 1:positive 1:positive       *0.667,0.333,0 
+    23 1:positive 1:positive       *0.667,0,0.333 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0,0.333 
+    26 1:positive 1:positive       *0.667,0,0.333 
+    27 1:positive 1:positive       *0.667,0,0.333 
+    28 1:positive 1:positive       *0.667,0.333,0 
+    29      3:mix 2:negative   +   0.333,*0.667,0 
+    30      3:mix 1:positive   +   *0.667,0.333,0 
+    31      3:mix 2:negative   +   0,*0.667,0.333 
+    32      3:mix      3:mix       0,0.333,*0.667 
+    33      3:mix 1:positive   +   *0.667,0,0.333 
+    34      3:mix 2:negative   +   0,*0.667,0.333 
+    35      3:mix 1:positive   +   *0.667,0.333,0 
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 1:positive   +   *0.667,0.333,0 
+     3 2:negative 2:negative       0.333,*0.667,0 
+     4 2:negative 1:positive   +   *0.667,0,0.333 
+     5 2:negative 2:negative       0,*0.667,0.333 
+     6 2:negative 1:positive   +   *0.667,0.333,0 
+     7 2:negative 1:positive   +   *0.667,0,0.333 
+     8 1:positive      3:mix   +   0.333,0,*0.667 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0,0.333 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0.333,0 
+    13 1:positive 1:positive       *0.667,0.333,0 
+    14 1:positive 1:positive       *0.667,0.333,0 
+    15 1:positive 1:positive       *0.667,0,0.333 
+    16 1:positive 1:positive       *0.667,0.333,0 
+    17 1:positive 1:positive       *0.667,0.333,0 
+    18 1:positive 1:positive       *0.667,0.333,0 
+    19 1:positive 2:negative   +   0.333,*0.667,0 
+    20 1:positive 1:positive       *0.667,0.333,0 
+    21 1:positive      3:mix   +   0.333,0,*0.667 
+    22 1:positive 1:positive       *0.667,0,0.333 
+    23 1:positive 1:positive       *0.667,0.333,0 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0,0.333 
+    26 1:positive      3:mix   +   0.333,0,*0.667 
+    27 1:positive 1:positive       *0.667,0,0.333 
+    28 1:positive 1:positive       *0.667,0,0.333 
+    29      3:mix      3:mix       0.333,0,*0.667 
+    30      3:mix 1:positive   +   *0.667,0.333,0 
+    31      3:mix 1:positive   +   *0.667,0.333,0 
+    32      3:mix 1:positive   +   *0.667,0,0.333 
+    33      3:mix 1:positive   +   *0.667,0,0.333 
+    34      3:mix 1:positive   +   *0.667,0.333,0 
+    35      3:mix 2:negative   +   0,*0.667,0.333 
+     1 2:negative      3:mix   +   0.333,0,*0.667 
+     2 2:negative 1:positive   +   *0.667,0.333,0 
+     3 2:negative      3:mix   +   0.333,0,*0.667 
+     4 2:negative 1:positive   +   *0.667,0.333,0 
+     5 2:negative      3:mix   +   0.333,0,*0.667 
+     6 2:negative      3:mix   +   0.333,0,*0.667 
+     7 2:negative      3:mix   +   0.333,0,*0.667 
+     8 1:positive 1:positive       *0.667,0,0.333 
+     9 1:positive 1:positive       *0.667,0,0.333 
+    10 1:positive 1:positive       *0.667,0.333,0 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0,0.333 
+    13 1:positive 1:positive       *0.667,0,0.333 
+    14 1:positive      3:mix   +   0.333,0,*0.667 
+    15 1:positive 1:positive       *0.667,0,0.333 
+    16 1:positive 1:positive       *0.667,0.333,0 
+    17 1:positive 1:positive       *0.667,0,0.333 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive      3:mix   +   0.333,0,*0.667 
+    20 1:positive 1:positive       *0.667,0,0.333 
+    21 1:positive 1:positive       *0.667,0.333,0 
+    22 1:positive 1:positive       *0.667,0.333,0 
+    23 1:positive 1:positive       *0.667,0,0.333 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0,0.333 
+    26 1:positive 1:positive       *0.667,0,0.333 
+    27 1:positive 1:positive       *0.667,0.333,0 
+    28      3:mix 1:positive   +   *0.667,0,0.333 
+    29      3:mix 1:positive   +   *0.667,0,0.333 
+    30      3:mix      3:mix       0.333,0,*0.667 
+    31      3:mix      3:mix       0,0.333,*0.667 
+    32      3:mix 1:positive   +   *0.667,0,0.333 
+    33      3:mix      3:mix       0.333,0,*0.667 
+    34      3:mix      3:mix       0.333,0,*0.667 
+    35      3:mix 1:positive   +   *0.667,0.333,0 
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 1:positive   +   *0.667,0,0.333 
+     3 2:negative 1:positive   +   *0.667,0,0.333 
+     4 2:negative 2:negative       0.333,*0.667,0 
+     5 2:negative 2:negative       0.333,*0.667,0 
+     6 2:negative 2:negative       0.333,*0.667,0 
+     7 2:negative 2:negative       0.333,*0.667,0 
+     8 1:positive 1:positive       *0.667,0.333,0 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0.333,0 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0,0.333 
+    13 1:positive 1:positive       *0.667,0,0.333 
+    14 1:positive 1:positive       *0.667,0.333,0 
+    15 1:positive 1:positive       *0.667,0,0.333 
+    16 1:positive 2:negative   +   0.333,*0.667,0 
+    17 1:positive 1:positive       *0.667,0,0.333 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0.333,0 
+    20 1:positive 1:positive       *0.667,0.333,0 
+    21 1:positive 2:negative   +   0.333,*0.667,0 
+    22 1:positive      3:mix   +   0.333,0,*0.667 
+    23 1:positive 1:positive       *0.667,0,0.333 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0.333,0 
+    26 1:positive 2:negative   +   0.333,*0.667,0 
+    27 1:positive 1:positive       *0.667,0.333,0 
+    28      3:mix 1:positive   +   *0.667,0,0.333 
+    29      3:mix 1:positive   +   *0.667,0.333,0 
+    30      3:mix      3:mix       0,0.333,*0.667 
+    31      3:mix 1:positive   +   *0.667,0.333,0 
+    32      3:mix 1:positive   +   *0.667,0,0.333 
+    33      3:mix 1:positive   +   *0.667,0.333,0 
+    34      3:mix 1:positive   +   *0.667,0,0.333 
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 1:positive   +   *0.667,0.333,0 
+     3 2:negative 1:positive   +   *0.667,0,0.333 
+     4 2:negative 1:positive   +   *0.667,0.333,0 
+     5 2:negative 1:positive   +   *0.667,0,0.333 
+     6 2:negative 1:positive   +   *0.667,0.333,0 
+     7 2:negative 1:positive   +   *0.667,0,0.333 
+     8 1:positive 1:positive       *0.667,0,0.333 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive      3:mix   +   0.333,0,*0.667 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0,0.333 
+    13 1:positive 1:positive       *0.667,0,0.333 
+    14 1:positive 1:positive       *0.667,0.333,0 
+    15 1:positive 1:positive       *0.667,0,0.333 
+    16 1:positive 1:positive       *0.667,0.333,0 
+    17 1:positive 1:positive       *0.667,0.333,0 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0.333,0 
+    20 1:positive 1:positive       *0.667,0.333,0 
+    21 1:positive 1:positive       *0.667,0,0.333 
+    22 1:positive 2:negative   +   0.333,*0.667,0 
+    23 1:positive      3:mix   +   0.333,0,*0.667 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0.333,0 
+    26 1:positive 1:positive       *0.667,0.333,0 
+    27 1:positive 1:positive       *0.667,0.333,0 
+    28      3:mix 1:positive   +   *0.667,0,0.333 
+    29      3:mix 1:positive   +   *0.667,0,0.333 
+    30      3:mix 1:positive   +   *0.667,0.333,0 
+    31      3:mix      3:mix       0.333,0,*0.667 
+    32      3:mix 1:positive   +   *0.667,0,0.333 
+    33      3:mix 2:negative   +   0,*0.667,0.333 
+    34      3:mix 1:positive   +   *0.667,0,0.333 
+     1 2:negative      3:mix   +   0.333,0,*0.667 
+     2 2:negative      3:mix   +   0.333,0,*0.667 
+     3 2:negative      3:mix   +   0,0.333,*0.667 
+     4 2:negative 1:positive   +   *0.667,0.333,0 
+     5 2:negative 2:negative       0.333,*0.667,0 
+     6 2:negative 1:positive   +   *0.667,0.333,0 
+     7 2:negative 1:positive   +   *0.667,0,0.333 
+     8 1:positive 1:positive       *0.667,0,0.333 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0,0.333 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0.333,0 
+    13 1:positive      3:mix   +   0.333,0,*0.667 
+    14 1:positive 1:positive       *0.667,0.333,0 
+    15 1:positive 1:positive       *0.667,0.333,0 
+    16 1:positive 1:positive       *0.667,0,0.333 
+    17 1:positive      3:mix   +   0.333,0,*0.667 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0.333,0 
+    20 1:positive 1:positive       *0.667,0,0.333 
+    21 1:positive 1:positive       *0.667,0,0.333 
+    22 1:positive      3:mix   +   0.333,0,*0.667 
+    23 1:positive 1:positive       *0.667,0,0.333 
+    24 1:positive 1:positive       *0.667,0,0.333 
+    25 1:positive 1:positive       *0.667,0,0.333 
+    26 1:positive 1:positive       *0.667,0.333,0 
+    27 1:positive 1:positive       *0.667,0,0.333 
+    28      3:mix      3:mix       0.333,0,*0.667 
+    29      3:mix 1:positive   +   *0.667,0,0.333 
+    30      3:mix 1:positive   +   *0.667,0,0.333 
+    31      3:mix      3:mix       0.333,0,*0.667 
+    32      3:mix 1:positive   +   *0.667,0,0.333 
+    33      3:mix 1:positive   +   *0.667,0.333,0 
+    34      3:mix      3:mix       0.333,0,*0.667 
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 1:positive   +   *0.667,0.333,0 
+     3 2:negative 2:negative       0.333,*0.667,0 
+     4 2:negative      3:mix   +   0.333,0,*0.667 
+     5 2:negative 2:negative       0,*0.667,0.333 
+     6 2:negative 1:positive   +   *0.667,0,0.333 
+     7 1:positive 1:positive       *0.667,0.333,0 
+     8 1:positive 1:positive       *0.667,0.333,0 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive      3:mix   +   0.333,0,*0.667 
+    11 1:positive 1:positive       *0.667,0,0.333 
+    12 1:positive 1:positive       *0.667,0.333,0 
+    13 1:positive 1:positive       *0.667,0.333,0 
+    14 1:positive 1:positive       *0.667,0,0.333 
+    15 1:positive 1:positive       *0.667,0.333,0 
+    16 1:positive 1:positive       *0.667,0.333,0 
+    17 1:positive 1:positive       *0.667,0.333,0 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0.333,0 
+    20 1:positive 1:positive       *0.667,0,0.333 
+    21 1:positive 1:positive       *0.667,0.333,0 
+    22 1:positive 2:negative   +   0.333,*0.667,0 
+    23 1:positive 1:positive       *0.667,0.333,0 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0,0.333 
+    26 1:positive 1:positive       *0.667,0,0.333 
+    27 1:positive 1:positive       *0.667,0,0.333 
+    28      3:mix 1:positive   +   *0.667,0.333,0 
+    29      3:mix      3:mix       0,0.333,*0.667 
+    30      3:mix 1:positive   +   *0.667,0,0.333 
+    31      3:mix 1:positive   +   *0.667,0,0.333 
+    32      3:mix 1:positive   +   *0.667,0.333,0 
+    33      3:mix 1:positive   +   *0.667,0,0.333 
+    34      3:mix 1:positive   +   *0.667,0.333,0 
+     1 2:negative 1:positive   +   *0.667,0.333,0 
+     2 2:negative 1:positive   +   *0.667,0.333,0 
+     3 2:negative      3:mix   +   0.333,0,*0.667 
+     4 2:negative 2:negative       0.333,*0.667,0 
+     5 2:negative 1:positive   +   *0.667,0.333,0 
+     6 2:negative 2:negative       0.333,*0.667,0 
+     7 1:positive 1:positive       *0.667,0,0.333 
+     8 1:positive 1:positive       *0.667,0.333,0 
+     9 1:positive 1:positive       *0.667,0.333,0 
+    10 1:positive 1:positive       *0.667,0,0.333 
+    11 1:positive 1:positive       *0.667,0.333,0 
+    12 1:positive 1:positive       *0.667,0.333,0 
+    13 1:positive 1:positive       *0.667,0,0.333 
+    14 1:positive      3:mix   +   0.333,0,*0.667 
+    15 1:positive 1:positive       *0.667,0,0.333 
+    16 1:positive 1:positive       *0.667,0.333,0 
+    17 1:positive      3:mix   +   0.333,0,*0.667 
+    18 1:positive 1:positive       *0.667,0,0.333 
+    19 1:positive 1:positive       *0.667,0.333,0 
+    20 1:positive 1:positive       *0.667,0.333,0 
+    21 1:positive 1:positive       *0.667,0.333,0 
+    22 1:positive 1:positive       *0.667,0,0.333 
+    23 1:positive 1:positive       *0.667,0,0.333 
+    24 1:positive 1:positive       *0.667,0.333,0 
+    25 1:positive 1:positive       *0.667,0,0.333 
+    26 1:positive 1:positive       *0.667,0.333,0 
+    27 1:positive 2:negative   +   0.333,*0.667,0 
+    28      3:mix 1:positive   +   *0.667,0,0.333 
+    29      3:mix      3:mix       0,0.333,*0.667 
+    30      3:mix 1:positive   +   *0.667,0,0.333 
+    31      3:mix 2:negative   +   0.333,*0.667,0 
+    32      3:mix 1:positive   +   *0.667,0.333,0 
+    33      3:mix      3:mix       0,0.333,*0.667 
+    34      3:mix      3:mix       0.333,0,*0.667 
